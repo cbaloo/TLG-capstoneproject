@@ -33,12 +33,14 @@ public class GameMap extends Quiz{
     public void getQuizEveryClass() throws IOException {
 
         int x = 1;
-        String jv1 = "Guitar";
-        String jv2 = "Guitar";
+        String s = null;
+        boolean isString;
+
+
         do {
             try {
-                javaQuiz.put("Guitar", "What's Jay's passion besides teaching?");
-                javaQuizRev.put("What's Jay's passion besides teaching?", "Guitar");
+                javaQuiz.put("Guitar", "What Jay enjoys besides teaching?");
+             //   javaQuizRev.put("What's Jay's passion besides teaching?", "Guitar");
                 //jsQuiz.put("Running", "How does Nelly keep himself fit?");
                 //dsQuiz.put("Hi-jack", "What's Tom's funny story?");
                 //liQuiz.put("AWS", "What other subject John teach besides Linux");
@@ -58,21 +60,36 @@ public class GameMap extends Quiz{
                 x = 2;
 
             }
-           // for (Map.Entry<String, String> entry : javaQuiz.entrySet()) {
+          // for (Map.Entry<String, String> entry : javaQuiz.entrySet()) {
 
                 //if (entry.getKey().equals(getQuizAnswer()))
                 // && entry.getValue() == javaQuizRev.get("Guitar"))
-                   if ( jv1.equals(jv2))
-                    {
+                  // if ( jv1.equals(jv2))
+                  //  {
 
                     //if (javaQuiz.containsKey("jv")) {
 
-                    System.out.println("You have passed, move to next class, press : W");
+                  //  System.out.println("You have passed, move to next class, press : W");
+
+             //   } else if (!jv1.equals(jv2)) {
+
+
+                      // System.out.println("\n" + "Sorry, you have failed" + "\n");
+                  // }
+
+            do {
+
+                if (userInput.hasNext("Guitar")) {
+                    s = userInput.nextLine();
+                    isString = true;
+                } else {
+                    System.out.println("enter valid answer");
+                    isString = false;
+                    userInput.next();
+
 
                 }
-
-
-            System.out.println("\n" + "Sorry, you have failed" + "\n");
+            } while (!(isString));
         } while (x == 1);
     }
 
@@ -298,54 +315,3 @@ void moveApprentiTo(Apprenti p, Level aLevel) {
 
 
 
-/*
- public class UserInput {
-
-        public static void ParseCommand(List<String> worldlist) {
-
-            String verb;
-            String noun;
-            List<String> commands = new ArrayList<>(Arrays.asList("take", "answer","move"));
-            List<String> objects = new ArrayList<>(Arrays.asList("quiz", "guitar", "presentation"));
-            if(worldlist.size()>2) {
-
-                 System.out.println("Allowed 2 word commands only");
-        } else {
-                verb = worldlist.get(0);
-                if (!commands.contains(verb)) {
-                    System.out.println(verb + " is not a known verb!");
-                }
-            }
-    }
-
-    public static List<String> WordList(String input) {
-
-        String delims = " \t, .:?!\"'";
-        List<String> strlist = new ArrayList<>();
-        StringTokenizer tokenizer = new StringTokenizer(input, delims);
-        String t;
-        while (tokenizer.hasMoreTokens()) {
-
-            t = tokenizer.nextToken();
-            strlist.add(t);
-        }
-        return strlist;
-    }
-
-    public String RunCommand(String input) {
-        List<String> wordlist;
-        String s = "ok";
-        String lowstr = input.trim().toLowerCase();
-
-        if (lowstr.equals(""))
-            s = "You must enter a command";
-    } else {
-        wordlist =WordList(lowstr);
-        wordlist.forEach(astr(->System.out.println(astr));
-        ParseCommand(wordlist);
-    }
-    return s;
-}
-
-}
- */
