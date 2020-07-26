@@ -31,7 +31,7 @@ public class Frame {
     // TextFieldHandler tfHandler = new TextFieldHandler();//tf
     MainScreenHandler mHandler = new MainScreenHandler();
     ChoiceButtonHandler choiceButtonHandler = new ChoiceButtonHandler();
-   // ChoiceButtonHandler.JavaButtonHandler javaButtonHandler = new ChoiceButtonHandler.JavaButtonHandler();
+    // ChoiceButtonHandler.JavaButtonHandler javaButtonHandler = new ChoiceButtonHandler.JavaButtonHandler();
 
     public static void main(String[] args) {
         new Frame();
@@ -122,7 +122,7 @@ public class Frame {
         javaButton.setForeground(green);
         javaButton.setFont(buttonFont);
         javaButton.setFocusPainted(false);
-       // javaButton.addActionListener(javaButtonHandler);
+        // javaButton.addActionListener(javaButtonHandler);
         javaButton.setActionCommand("j1");
         javaButtonPanel.add(javaButton);
 
@@ -412,11 +412,12 @@ public class Frame {
                 }
 
        */
-            }
+    }
 
 
 
-        }
+}
+
 
 
 
