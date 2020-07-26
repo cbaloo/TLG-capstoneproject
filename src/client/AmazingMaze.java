@@ -19,7 +19,7 @@ public class AmazingMaze extends GameMap {
         BufferedReader in;
         String input;
         String output;
-        File file = new File("C:\\Users\\chand\\Documents\\testtlg.txt");
+      /*  File file = new File("C:\\Users\\chand\\Documents\\testtlg.txt");
         Scanner scanner = new Scanner(file, StandardCharsets.UTF_8.name());
         String content = null;
         try (scanner){
@@ -30,7 +30,7 @@ public class AmazingMaze extends GameMap {
         }
         // System.out.println(content);
         System.out.println(content);
-
+*/
 
         GameMap gameMap = new GameMap();
         gameMap.getQuizEveryClass();
