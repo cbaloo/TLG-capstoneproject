@@ -17,7 +17,8 @@ public class Frame {
     JFrame window; //new
     Container con;//new
     JPanel titleNameOnPanel, startButtonPanel, screenTextPanel, choiceButtonPanel, screen1ENamePanel, playerClassPanel, playerScoreLocTimePanel, javaScreenPanel, javaButtonPanel;
-    JLabel titleNameOnLabel, screen1ENameLabel, javaClassLabel, jsClassLabel, dsClassLabel, liClassLabel, pyClassLabel, capClassLabel, scoreLabel, locationLabel, timeLabel;
+    JLabel titleNameOnLabel, screen1ENameLabel, javaClassLabel, jsClassLabel, dsClassLabel, liClassLabel, pyClassLabel, capClassLabel, scoreLabel, locationLabel, timeLabel, scoreValueLabel, locationValueLabel;
+
     Font titleFont = new Font("Algerian", Font.BOLD, 60);
     Font buttonFont = new Font("Abadi", Font.BOLD, 25);
     JButton startButton, choiceButton1, choiceButton2, choiceButton3, choiceButton4, javaButton;
@@ -25,6 +26,8 @@ public class Frame {
     //CB added for enter name on screen 1.
     JTextField screen1EnterNameTF;
 
+    int currentScore; // for screen 2 display
+    String currentLocation;
 
     Scanner userInput = new Scanner(System.in);
 
@@ -86,6 +89,12 @@ public class Frame {
         screen1EnterNameTF.requestFocusInWindow();
         screen1ENamePanel.add(screen1EnterNameTF);
         // sc1SubmitButton.addActionListener(tfHandler);
+
+       enterNameOnScreen1();
+    }
+
+    public void enterNameOnScreen1(){
+
 
 
     }
@@ -150,7 +159,7 @@ public class Frame {
         choiceButton2.setActionCommand("c2");
         choiceButtonPanel.add(choiceButton2);
 
-        choiceButton3 = new JButton("Play");
+        choiceButton3 = new JButton("Timer");
         choiceButton3.setBackground(Color.gray);
         choiceButton3.setForeground(Color.red);
         choiceButton3.setFont(buttonFont);
@@ -170,7 +179,7 @@ public class Frame {
 
         playerClassPanel = new JPanel();
         playerClassPanel.setBounds(550, 700, 1000, 80);
-        playerClassPanel.setBackground(Color.darkGray);
+        playerClassPanel.setBackground(Color.blue);
         playerClassPanel.setLayout(new GridLayout(1, 3));
         con.add(playerClassPanel);
 
@@ -206,8 +215,8 @@ public class Frame {
 
         playerScoreLocTimePanel = new JPanel();
         playerScoreLocTimePanel.setBounds(700, 40, 700, 80);
-        playerScoreLocTimePanel.setBackground(Color.GRAY);
-        playerScoreLocTimePanel.setLayout(new GridLayout(1, 3));
+        playerScoreLocTimePanel.setBackground(Color.blue);
+        playerScoreLocTimePanel.setLayout(new GridLayout(1, 4));
         con.add(playerScoreLocTimePanel);
 
         scoreLabel = new JLabel("Score:");
@@ -215,18 +224,42 @@ public class Frame {
         scoreLabel.setForeground(green);
         playerScoreLocTimePanel.add(scoreLabel);
 
+        scoreValueLabel = new JLabel();
+        scoreValueLabel.setFont(buttonFont);
+        scoreValueLabel.setForeground(green);
+        playerScoreLocTimePanel.add(scoreValueLabel);
+
         locationLabel = new JLabel("Location:");
         locationLabel.setFont(buttonFont);
         locationLabel.setForeground(green);
         playerScoreLocTimePanel.add(locationLabel);
 
+        locationValueLabel = new JLabel();
+        locationValueLabel.setFont(buttonFont);
+        locationValueLabel.setForeground(green);
+        playerScoreLocTimePanel.add(locationValueLabel);
+
+        currentScoreLocation();
+
+    }
+
+    public void currentScoreLocation() {
+
+        currentScore = 0;
+        currentLocation = "Lobby";
+        scoreValueLabel.setText("" + currentScore);
+        locationValueLabel.setText(currentLocation);
+
+    }
+
+/*
         timeLabel = new JLabel("Time:");
         timeLabel.setFont(buttonFont);
         timeLabel.setForeground(green);
         playerScoreLocTimePanel.add(timeLabel);
 
+*/
 
-    }
 
 /*
     public void javaClassScreen() {

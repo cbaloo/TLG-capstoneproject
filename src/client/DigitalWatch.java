@@ -15,6 +15,9 @@ import java.util.Date;
         DigitalWatch(){
             f=new JFrame();
 
+            // To make a class runnable, we can implement java.lang.Runnable interface and provide implementation in public void run() method.
+            // To use this class as Thread, we need to create a Thread object by passing object of this runnable class and then call start() method to execute the run() method in a separate thread.
+
             t = new Thread(this);
             t.start();
 
